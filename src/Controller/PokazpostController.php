@@ -29,6 +29,6 @@ class PokazpostController extends AbstractController
         if(!$id){
             return new Response('nie ma ID');
         }
-        return new Response('Author:'.$id->getAuthor().' Title:'.$id->getTitle().' Text:'.$id->getText());
+        return $this->json('Author:'.$id->getAuthor().' Title:'.$id->getTitle().' Text:'.$id->getText());
     }
 }
