@@ -9,13 +9,19 @@
  Add post
     <a class="button" href="logout" style="float: right;">Logout</a>
     <div class="post post-homepage">
-        <form>
-            
-            <input class="input" type="text" name="fauthor" value="Author"><br/>
-            
-            <textarea class="input" style="height: 200px;" name="fpost"></textarea><br/>
-            <input class="input" type="submit" value="Add post">
-        </form>
+        
+
+        {{form_start(form)}}
+            {{ form_label(form.author, 'Author') }}
+            {{ form_widget(form.author, {'attr': {'class': 'input'}}) }}
+            {{ form_label(form.author, 'Title') }}
+            {{ form_widget(form.title, {'attr': {'class': 'input'}}) }}
+            {{ form_label(form.author, 'Text') }}
+            {{ form_widget(form.text, {'attr': {'class': 'input','style': 'height: 200px;'}}) }}
+            {{ form_widget(form.submit,{'attr': {'class': 'input'}}) }}
+        {{ form_end(form) }}
     </div>
+
+    
 
 {% endblock %}
