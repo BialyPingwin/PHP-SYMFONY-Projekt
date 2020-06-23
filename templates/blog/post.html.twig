@@ -6,28 +6,34 @@
 
 {% block body %}
 
-<a class="button" href="url">Home page</a>
+<a class="button" href="{{ path('blog') }}">Home page</a>
 
 <div class="post">
-    Post Title {{controller_name}}<br/>
-    Author: adadada <br/><hr>
-    tatatattatatatattttttatatatatatatatatatatatatatatatat
+    Post Title {{post.title}}<br/>
+    Author: {{post.author}} <br/><hr>
+    {{post.text}}
 
 </div>
 
+{% for comment in post_comments %}
 <div class="commentary">
-    #1 Author: adadada <br/>
-    tatatattatatatattttttatatatatatatatatatatatatatatatatdasdaassssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss
+    Author: {{comment.author}} <br/>
+    {{comment.text}}
 
 </div>
+{% endfor %}
+
 
 <div class="commentary commentary-add">
-    <form>
-        
-        <input class="input" type="text" name="fauthor" value="Author"><br/>
-        
-        <textarea class="input" name="fcommentary"></textarea><br/>
-        <input class="input" type="submit" value="Submit">
-    </form>
+    
+    {{form_start(form)}}
+        {{ form_widget(form.author, {'attr': {'class': 'input', 'value': 'Author'}}) }}
+        {{ form_widget(form.text, {'attr': {'class': 'input'}}) }}
+        {{ form_widget(form.submit,{'attr': {'class': 'input'}}) }}
+    {{ form_end(form) }}
+
 </div>
+
+
+
 {% endblock %}

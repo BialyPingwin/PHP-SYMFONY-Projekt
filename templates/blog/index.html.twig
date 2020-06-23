@@ -5,17 +5,14 @@
 {% block title %}Blog kulinarny!{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
 
 
-<div class="post post-homepage">
-    <a class="button" href="post1">Post Title {{ controller_name }}</a><br>
-    Author: {{ controller_name }} <br/><hr>
+{% for post in blog_posts %}
+    <div class="post post-homepage">
+        <a class="button" href="{{ path('post', {post_id: post.id}) }}">{{ post.title}}</a><br>
+        Author: {{ post.author }} <br/><hr>
 
-</div>
-
+    </div>
+{% endfor %}
 
 {% endblock %}
