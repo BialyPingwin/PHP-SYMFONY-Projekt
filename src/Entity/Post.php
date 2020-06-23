@@ -19,11 +19,7 @@ class Post
      */
     private $id;
 
-    /**
-     * @ORM\Column(type="integer")
-     */
-    private $post_id;
-
+   
     /**
      * @ORM\Column(type="string", length=255)
      */
@@ -45,10 +41,11 @@ class Post
     private $date;
 
     /**
-     * @ORM\OneToMany(targetEntity=Comments::class, mappedBy="post_id")
+     * @ORM\OneToMany(targetEntity=Comments::class, mappedBy="Post")
      */
     private $comments;
 
+    
     public function __construct()
     {
         $this->comments = new ArrayCollection();
@@ -59,18 +56,7 @@ class Post
         return $this->id;
     }
 
-    public function getPostId(): ?int
-    {
-        return $this->post_id;
-    }
-
-    public function setPostId(int $post_id): self
-    {
-        $this->post_id = $post_id;
-
-        return $this;
-    }
-
+  
     public function getAuthor(): ?string
     {
         return $this->author;
@@ -131,7 +117,7 @@ class Post
     {
         if (!$this->comments->contains($comment)) {
             $this->comments[] = $comment;
-            $comment->setPostId($this);
+            $comment->setPost($this);
         }
 
         return $this;
@@ -142,11 +128,13 @@ class Post
         if ($this->comments->contains($comment)) {
             $this->comments->removeElement($comment);
             // set the owning side to null (unless already changed)
-            if ($comment->getPostId() === $this) {
-                $comment->setPostId(null);
+            if ($comment->getPost() === $this) {
+                $comment->setPost(null);
             }
         }
 
         return $this;
     }
+
+       
 }

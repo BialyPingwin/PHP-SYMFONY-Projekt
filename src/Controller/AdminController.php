@@ -22,8 +22,7 @@ class AdminController extends AbstractController
 
         $form->handleRequest($request);
         if ($form->isSubmitted()){
-            $post = $form->getData();
-            $post->setPostId(0);
+            $post = $form->getData();            
             $post->setDate(new \DateTime('now'));
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($post);

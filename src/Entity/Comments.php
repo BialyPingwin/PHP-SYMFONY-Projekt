@@ -18,10 +18,10 @@ class Comments
     private $id;
 
     /**
-     * @ORM\ManyToOne(targetEntity=post::class, inversedBy="comments")
+     * @ORM\ManyToOne(targetEntity=Post::class, inversedBy="comments")
      * @ORM\JoinColumn(nullable=false)
      */
-    private $post_id;
+    private $Post;
 
     /**
      * @ORM\Column(type="string", length=255)
@@ -43,14 +43,14 @@ class Comments
         return $this->id;
     }
 
-    public function getPostId(): ?post
+    public function getPost(): ?Post
     {
-        return $this->post_id;
+        return $this->Post;
     }
 
-    public function setPostId(?post $post_id): self
+    public function setPost(?Post $Post): self
     {
-        $this->post_id = $post_id;
+        $this->Post = $Post;
 
         return $this;
     }
