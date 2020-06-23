@@ -1,0 +1,16 @@
+{#Kamil Gozdalski#}
+
+{% extends 'base.html.twig' %}
+
+{% block title %}Post page{% endblock %}
+
+{% block body %}
+
+    {% for post in base %}
+        <article class="post">
+            <h1>Tytuł: {{ post.title }}</h1>
+            <h2>Autor: {{ post.author }}</h2>
+        </article>
+    {% endfor %}
+
+{% endblock %}
