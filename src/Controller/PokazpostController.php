@@ -18,7 +18,7 @@ class PokazpostController extends AbstractController
     {
         return $this->json([
             'message' => 'Welcome to your new controller!',
-            'path' => 'src/Controller/PokazpostController.php',
+            'path' => 'src/Controller/PokazPOSTController.php',
         ]);
     }
     public function  id($id)
