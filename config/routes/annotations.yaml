@@ -6,18 +6,16 @@ kernel:
     resource: ../../src/Kernel.php
     type: annotation
 
-adminController:
+admin:
     path: /admin
     controller: App\Controller\AdminController::index
+login:
+    path: /admin/login
+    controller: App\Controller\AdminController::login
 
-blogController:
+blog:
     path: /
     controller: App\Controller\BlogController::index
-
-postController:
+post:
     path: /post/{post_id}
-    controller: App\Controller\PostController::index
-
-loginController:
-    path: /admin/login
-    controller: App\Controller\LoginController::index
+    controller: App\Controller\BlogController::show_post
