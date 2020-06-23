@@ -25,11 +25,10 @@ class ShowPostController extends AbstractController
         $id=$this->getDoctrine()
             ->getRepository(Post::class)
             ->find($id);
-        $response = new JsonResponse([
+        return new JsonResponse([
             'author'=>$id->getAuthor(),
             'title'=>$id->getTitle(),
             'text'=>$id->getText()
         ]);
-        return $response;
     }
 }
