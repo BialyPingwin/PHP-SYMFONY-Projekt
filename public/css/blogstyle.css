@@ -1,0 +1,63 @@
+
+body {
+    background-color: darkslategray;
+    font-size: 25px;
+    font-weight:bold;
+}
+
+.post {
+    margin: 20px;
+    margin-right: 100px;
+    padding: 30px;
+    background-color: aquamarine;
+    border-radius: 25px;
+    word-break: break-all;
+
+}
+
+.post-homepage {
+    margin-right: 20px;
+}
+
+.commentary{            
+    margin: 20px;          
+    margin-left: 10vw;            
+    padding: 20px;
+    background-color:cadetblue;
+    border-radius: 25px;
+    word-break: break-all;
+}
+
+.commentary-add{
+    float: right;
+    width: 40%;
+    max-width: 300px;
+}
+
+
+
+.button{
+    cursor: pointer;
+    color: black;
+}
+
+.input{
+    width: 98%;
+    margin:5px;
+    padding: 8px;
+    box-sizing: border-box;
+    border-radius: 10px;
+    border-width: 0px;
+    background-color: lightslategray;
+    
+}
+
+textarea {
+    resize: none;
+}
+
+form {
+    width: 100%;
+    font-size: 30px;
+}
+

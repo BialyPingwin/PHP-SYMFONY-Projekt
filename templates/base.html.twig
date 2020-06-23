@@ -1,9 +1,12 @@
+{#Michał Bogusławski#}
 <!DOCTYPE html>
 <html>
     <head>
         <meta charset="UTF-8">
         <title>{% block title %}Welcome!{% endblock %}</title>
         {% block stylesheets %}{% endblock %}
+        {# the CSS file lives at "public/css/blog.css" #}
+        <link href="{{ asset('css/blogstyle.css') }}" rel="stylesheet"/>
     </head>
     <body>
         {% block body %}{% endblock %}

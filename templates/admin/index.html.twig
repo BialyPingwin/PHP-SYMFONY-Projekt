@@ -1,20 +1,21 @@
+{#Michał Bogusławski#}
+
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello AdminController!{% endblock %}
+{% block title %}Admin page{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
 
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
+ Add post
+    <a class="button" href="logout" style="float: right;">Logout</a>
+    <div class="post post-homepage">
+        <form>
+            
+            <input class="input" type="text" name="fauthor" value="Author"><br/>
+            
+            <textarea class="input" style="height: 200px;" name="fpost"></textarea><br/>
+            <input class="input" type="submit" value="Add post">
+        </form>
+    </div>
 
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ 'D:/studia/PHP-SYMFONY-Projekt/blog/src/Controller/AdminController.php'|file_link(0) }}">src/Controller/AdminController.php</a></code></li>
-        <li>Your template at <code><a href="{{ 'D:/studia/PHP-SYMFONY-Projekt/blog/templates/admin/index.html.twig'|file_link(0) }}">templates/admin/index.html.twig</a></code></li>
-    </ul>
-</div>
 {% endblock %}

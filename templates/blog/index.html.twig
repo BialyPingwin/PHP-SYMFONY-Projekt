@@ -1,6 +1,8 @@
+{#Michał Bogusławski#}
+
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello BlogController!{% endblock %}
+{% block title %}Blog kulinarny!{% endblock %}
 
 {% block body %}
 <style>
@@ -8,13 +10,12 @@
     .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
 </style>
 
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
 
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ 'D:/studia/PHP-SYMFONY-Projekt/blog/src/Controller/BlogController.php'|file_link(0) }}">src/Controller/BlogController.php</a></code></li>
-        <li>Your template at <code><a href="{{ 'D:/studia/PHP-SYMFONY-Projekt/blog/templates/blog/index.html.twig'|file_link(0) }}">templates/blog/index.html.twig</a></code></li>
-    </ul>
+<div class="post post-homepage">
+    <a class="button" href="post1">Post Title {{ controller_name }}</a><br>
+    Author: {{ controller_name }} <br/><hr>
+
 </div>
+
+
 {% endblock %}
