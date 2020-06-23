@@ -7,6 +7,7 @@ use Symfony\Component\Routing\Annotation\Route;
 use App\Entity\Comments;
 use App\Entity\Post;
 use DateTime;
+use Symfony\Component\HttpFoundation\JsonResponse;
 class ShowPostController extends AbstractController
 {
     /**
@@ -24,9 +25,11 @@ class ShowPostController extends AbstractController
         $id=$this->getDoctrine()
             ->getRepository(Post::class)
             ->find($id);
-        if(!$id){
-            return $this->json('nie ma ID');
-        }
-        return $this->json('Author:'.$id->getAuthor().' Title:'.$id->getTitle().' Text:'.$id->getText());
+        $response = new JsonResponse([
+            'author'=>$id->getAuthor(),
+            'title'=>$id->getTitle(),
+            'text'=>$id->getText()
+        ]);
+        return $response;
     }
 }
