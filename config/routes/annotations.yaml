@@ -13,3 +13,11 @@ adminController:
 blogController:
     path: /
     controller: App\Controller\BlogController::index
+
+postController:
+    path: /post/{post_id}
+    controller: App\Controller\PostController::index
+
+loginController:
+    path: /admin/login
+    controller: App\Controller\LoginController::index
