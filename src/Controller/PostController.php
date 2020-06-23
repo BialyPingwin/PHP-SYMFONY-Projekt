@@ -10,10 +10,10 @@ class PostController extends AbstractController
     /**
      * @Route("/post", name="post")
      */
-    public function index()
+    public function index($post_id)
     {
         return $this->render('post/index.html.twig', [
-            'controller_name' => 'PostController',
+            'controller_name' => 'PostController '.$post_id ,
         ]);
     }
 }
