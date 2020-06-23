@@ -4,3 +4,6 @@
 id:
   path: /id/{id}
   controller: App\Controller\ZwrotIDController::id
+pokazpost:
+  path: /pokazpost/{id}
+  controller: App\Controller\PokazpostController::id
