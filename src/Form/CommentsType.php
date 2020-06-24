@@ -1,4 +1,5 @@
 <?php
+//Michał Bogusławski
 
 namespace App\Form;
 
@@ -10,6 +11,7 @@ use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 
+
 class CommentsType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
@@ -17,7 +19,7 @@ class CommentsType extends AbstractType
         $builder
             ->add('author', TextType::class)
             ->add('text', TextareaType::class)
-            ->add('submit', SubmitType::class, ['label' => 'Submit'])             
+            ->add('submit', SubmitType::class, ['label' => 'Submit'])
         ;
     }
 

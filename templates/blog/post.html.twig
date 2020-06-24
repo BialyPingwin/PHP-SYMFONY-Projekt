@@ -2,7 +2,7 @@
 
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello PostController!{% endblock %}
+{% block title %}Post{% endblock %}
 
 {% block body %}
 
@@ -27,8 +27,8 @@
 <div class="commentary commentary-add">
     
     {{form_start(form)}}
-        {{ form_widget(form.author, {'attr': {'class': 'input', 'value': 'Author'}}) }}
-        {{ form_widget(form.text, {'attr': {'class': 'input'}}) }}
+        {{ form_widget(form.author, {'attr': {'class': 'input', 'placeholder': 'Author'}}) }}
+        {{ form_widget(form.text, {'attr': {'class': 'input', 'placeholder': 'Comment'}}) }}
         {{ form_widget(form.submit,{'attr': {'class': 'input'}}) }}
     {{ form_end(form) }}
 
