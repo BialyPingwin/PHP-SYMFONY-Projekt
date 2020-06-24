@@ -45,4 +45,5 @@ id(inc) | post_id | author | text
 
 Instalacja:
 -composer require symfony/webpack-encore-bundle (w konsoli phpstorm)
+
 -baza danych ma nazwe db_blog
