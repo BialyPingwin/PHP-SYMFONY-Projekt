@@ -1,23 +1,19 @@
 {#Michał Bogusławski#}
-{#Kamil Gozdalski#}
 
 {% extends 'base.html.twig' %}
 
 {% block title %}Blog kulinarny!{% endblock %}
 
-{% block stylesheets %}
-    {{ parent() }}
-
-{% endblock %}
-
 {% block body %}
-    {{ parent() }}
-    <div class="container">
-        {% for post in blog_posts %}
-            <div>
-                <h1 class="mt-4"><a class="text-dark" href="{{ path('post', {post_id: post.id}) }}">{{ post.title}}</a></h1><br>
-                Author: {{ post.author }} <br/><hr>
-            </div>
-        {% endfor %}
+
+<a class="button" href="{{ path('admin') }}">Add post</a><br>
+
+{% for post in blog_posts %}
+    <div class="post post-homepage">
+        <a class="button" href="{{ path('post', {post_id: post.id}) }}">{{ post.title}}</a><br>
+        Author: {{ post.author }} <br/><hr>
+
     </div>
+{% endfor %}
+
 {% endblock %}

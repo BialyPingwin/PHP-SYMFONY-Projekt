@@ -1,5 +1,4 @@
 {#Michał Bogusławski#}
-{#Kamil Gozdalski#}
 
 {% extends 'base.html.twig' %}
 
@@ -7,47 +6,34 @@
 
 {% block body %}
 
-{{ parent() }}
-<div class="container">
-    <div>
-        <h1 class="mt-4">{{post.title}}</h1>
-        <p class="lead">Author: {{post.author}}</p>
-        <hr>
-        <p>Posted on {{ post.date|date("d/m/Y")}}</p>
-        <hr>
-        <hr>
-        <p class="text-wrap text-break">{{post.text}}</p>
-    </div>
+<a class="button" href="{{ path('blog') }}">Home page</a>
 
-    <div class="card">
-        <div class="card-header">
-            <h5>Leave a comment</h5>
-        </div>
-        <div class="card-body">
-
-        {{form_start(form)}}
-            <div>
-            {{ form_widget(form.author, {'attr': {'class': 'form-control', 'placeholder': 'Author'}}) }}
-            </div>
-            <div class="my-3">
-            {{ form_widget(form.text, {'attr': {'class': 'form-control', 'placeholder': 'Comment'}}) }}
-            </div>
-            <div>
-            {{ form_widget(form.submit,{'attr': {'class': 'btn btn-primary'}}) }}
-            </div>
-        {{ form_end(form) }}
-        </div>
-    </div>
-    <hr>
-
-
-    {% for comment in post_comments %}
-        <div class=" mb-4">
-            <h5 class="mt-0 text-break text-wrap">{{comment.author}} </h5>
-            <p class="text-break text-wrap">{{comment.text}}</p>
-        </div>
-    {% endfor %}
+<div class="post">
+    Post Title {{post.title}}<br/>
+    Author: {{post.author}} <br/><hr>
+    {{post.text}}
 
 </div>
+
+{% for comment in post_comments %}
+<div class="commentary">
+    Author: {{comment.author}} <br/>
+    {{comment.text}}
+
+</div>
+{% endfor %}
+
+
+<div class="commentary commentary-add">
+    
+    {{form_start(form)}}
+        {{ form_widget(form.author, {'attr': {'class': 'input', 'placeholder': 'Author'}}) }}
+        {{ form_widget(form.text, {'attr': {'class': 'input', 'placeholder': 'Comment'}}) }}
+        {{ form_widget(form.submit,{'attr': {'class': 'input'}}) }}
+    {{ form_end(form) }}
+
+</div>
+
+
 
 {% endblock %}
