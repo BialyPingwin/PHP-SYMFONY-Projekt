@@ -1,15 +1,16 @@
 
 body {
-    background-color: darkslategray;
+    background-color: #99b898;
     font-size: 25px;
     font-weight:bold;
+    color: white;
 }
 
 .post {
     margin: 20px;
     margin-right: 100px;
     padding: 30px;
-    background-color: aquamarine;
+    background-color: #feceab;
     border-radius: 25px;
     word-break: break-all;
 
@@ -23,13 +24,14 @@ body {
     margin: 20px;          
     margin-left: 10vw;            
     padding: 20px;
-    background-color:cadetblue;
+    background-color:#ff847c;
     border-radius: 25px;
     word-break: break-all;
 }
 
 .commentary-add{
     float: right;
+    background-color:#e84a5f;
     width: 40%;
     max-width: 300px;
 }
@@ -38,7 +40,7 @@ body {
 
 .button{
     cursor: pointer;
-    color: black;
+    color: white;
 }
 
 .input{
@@ -48,7 +50,7 @@ body {
     box-sizing: border-box;
     border-radius: 10px;
     border-width: 0px;
-    background-color: lightslategray;
+    background-color: white;
     
 }
 
