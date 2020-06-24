@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Czas generowania: 24 Cze 2020, 19:27
+-- Czas generowania: 24 Cze 2020, 20:02
 -- Wersja serwera: 10.4.13-MariaDB
 -- Wersja PHP: 7.4.7
 
@@ -34,6 +34,14 @@ CREATE TABLE `comments` (
   `text` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
   `date` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Zrzut danych tabeli `comments`
+--
+
+INSERT INTO `comments` (`id`, `post_id`, `author`, `text`, `date`) VALUES
+(1, 1, 'anonim', 'byłem polecam', '2020-06-24 20:01:29'),
+(2, 4, 'mlodykucharz', 'super przepis wiem co dzis zrobie do jedzenia', '2020-06-24 20:02:02');
 
 -- --------------------------------------------------------
 
@@ -109,7 +117,7 @@ ALTER TABLE `post`
 -- AUTO_INCREMENT dla tabeli `comments`
 --
 ALTER TABLE `comments`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT dla tabeli `post`
