@@ -1,5 +1,6 @@
 <?php
 //Michał Bogusławski
+//Marcin Kurach
 
 namespace App\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
