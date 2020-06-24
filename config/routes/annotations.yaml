@@ -19,3 +19,6 @@ blog:
 post:
     path: /post/{post_id}
     controller: App\Controller\BlogController::show_post
+logout:
+    path: /admin/logout
+    controller: App\Controller\AdminController::logout
