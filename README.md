@@ -48,3 +48,4 @@ Instalacja:
 - baza danych ma nazwe db_blog
 - composer install
 - php bin/console doctrine:migrations:migrate
+- dane do zalogowania to: admin / admin
