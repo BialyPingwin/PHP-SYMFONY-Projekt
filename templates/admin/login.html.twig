@@ -1,13 +1,30 @@
 {#Michał Bogusławski#}
+{#Kamil Gozdalski#}
 {% extends 'base.html.twig' %}
 
 {% block title %}Login{% endblock %}
 
 {% block body %}
     {{ parent() }}
-    <div style="width: 100%;text-align: center;">
-        <div style ="width: 100px; margin: auto;">
-            {{form(form)}}
+    <div class="container" style="background-color: inherit; margin-top:10vh">
+        <div class="row align-middle">
+            <div class="col"></div>
+            <div class="col-sm-6 col-md-4 card py-4">
+                {{ form_start(form) }}
+                <div>
+                {{ form_label(form.login, 'Login') }}
+                {{ form_widget(form.login, {'attr': {'class': 'form-control'}})}}
+                </div>
+                <div>
+                {{ form_label(form.password, 'Password') }}
+                {{ form_widget(form.password, {'attr': {'class': 'form-control'}})}}
+                </div>
+                <div class="text-center">
+                {{ form_widget(form.submit,{'attr': {'class': 'mt-2 btn btn-success btn-block'}}) }}
+                </div>
+                {{ form_end(form) }}
+            </div>
+            <div class="col"></div>
         </div>
     </div>
 {% endblock %}

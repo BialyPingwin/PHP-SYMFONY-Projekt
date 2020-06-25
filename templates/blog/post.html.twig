@@ -10,13 +10,14 @@
 {{ parent() }}
 <div class="container">
     <div>
-        <h1 class="mt-4">{{post.title}}</h1>
-        <p class="lead">Author: {{post.author}}</p>
+        <h1 class="mt-4 text-break text-wrap">{{post.title}}</h1>
+        <p class="lead text-break text-wrap">Author: {{post.author}}</p>
         <hr>
         <p>Posted on {{ post.date|date("d/m/Y")}}</p>
         <hr>
         <hr>
         <p class="text-wrap text-break">{{post.text}}</p>
+        <hr>
     </div>
 
     <div class="card">
@@ -33,7 +34,7 @@
             {{ form_widget(form.text, {'attr': {'class': 'form-control', 'placeholder': 'Comment'}}) }}
             </div>
             <div>
-            {{ form_widget(form.submit,{'attr': {'class': 'btn btn-primary'}}) }}
+            {{ form_widget(form.submit,{'attr': {'class': 'btn btn-success'}}) }}
             </div>
         {{ form_end(form) }}
         </div>
@@ -43,9 +44,13 @@
 
     {% for comment in post_comments %}
         <div class=" mb-4">
-            <h5 class="mt-0 text-break text-wrap">{{comment.author}} </h5>
+            <div class="row">
+                <h5 class="mt-0 text-break text-wrap col-11">{{comment.author}} </h5>
+                <div class="col">{{comment.date|date("d/m/y")}}</div>
+            </div>
             <p class="text-break text-wrap">{{comment.text}}</p>
         </div>
+        <hr>
     {% endfor %}
 
 </div>

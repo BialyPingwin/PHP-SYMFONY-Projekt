@@ -1,27 +1,42 @@
 {#Michał Bogusławski#}
-
+{#Kamil Gozdalski#}
 {% extends 'base.html.twig' %}
 
 {% block title %}Admin page{% endblock %}
 
+{% block nav %}
+        <li class="nav-item">
+            <a href="{{ path('logout') }}" class="nav-link">Logout</a>
+        </li>
+{% endblock %}
+
 {% block body %}
 
- Add post
-    <a class="button" href="{{ path('logout') }}" style="float: right;">Logout</a>
-    <div class="post post-homepage">
-        
-
-        {{form_start(form)}}
-            {{ form_label(form.author, 'Author') }}
-            {{ form_widget(form.author, {'attr': {'class': 'input'}}) }}
-            {{ form_label(form.author, 'Title') }}
-            {{ form_widget(form.title, {'attr': {'class': 'input'}}) }}
-            {{ form_label(form.author, 'Text') }}
-            {{ form_widget(form.text, {'attr': {'class': 'input','style': 'height: 200px;'}}) }}
-            {{ form_widget(form.submit,{'attr': {'class': 'input'}}) }}
-        {{ form_end(form) }}
+    {{ parent() }}
+    <div class="container">
+        <div class="card">
+            <h1 class="card-header">Add post</h1>
+            <div class="card-body">
+            {{form_start(form)}}
+                <div>
+                {{ form_label(form.author, 'Author') }}
+                {{ form_widget(form.author, {'attr': {'class': 'form-control'}}) }}
+                </div>
+                <div>
+                {{ form_label(form.author, 'Title') }}
+                {{ form_widget(form.title, {'attr': {'class': 'form-control'}}) }}
+                </div>
+                <div>
+                {{ form_label(form.author, 'Text') }}
+                {{ form_widget(form.text, {'attr': {'class': 'form-control','style': 'height: 200px;'}}) }}
+                </div>
+                <div>
+                {{ form_widget(form.submit,{'attr': {'class': 'mt-2 btn btn-primary'}}) }}
+                </div>
+            {{ form_end(form) }}
+            </div>
+        </div>
     </div>
-
     
 
 {% endblock %}
